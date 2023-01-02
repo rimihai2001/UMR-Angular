@@ -1,0 +1,5 @@
+<p>main-page works!</p>
+
+<button routerLinkActive="active" *ngIf="afAuth.user | async">
+    <a (click)="logout()" routerLink="../home">Sign Out</a>
+  </button>

@@ -1,0 +1,17 @@
+<div class="container">
+  <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input placeholder="Email" type="email" formControlName="email" />
+    <input
+      placeholder="Password"
+      type="password"
+      formControlName="password"
+      minlength="6"
+    />
+    <button type="submit" (click)="onSubmit()">Log me in</button>
+  </form>
+
+  <p>
+    Go back to
+    <span routerLink="../signup">Sign up</span>
+  </p>
+</div>
