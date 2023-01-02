@@ -1,0 +1,25 @@
+<div class="container">
+  <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <input placeholder="First Name" formControlName="fname" />
+    <input placeholder="Last Name" formControlName="lname" />
+    <input placeholder="Email" type="email" formControlName="email" />
+    <input
+      placeholder="Password"
+      type="password"
+      formControlName="password"
+      minlength="6"
+    />
+    <select formControlName="role">
+      <option value="" disabled selected hidden>User Type</option>
+      <option value="student">Band</option>
+      <option value="profesor">Location</option>
+    </select>
+
+    <button type="submit">Sign me up</button>
+  </form>
+
+  <p>
+    Already a member?
+    <button routerLink="../login">Log in</button>
+  </p>
+</div>

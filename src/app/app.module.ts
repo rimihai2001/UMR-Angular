@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
-import { HomepageComponent } from './pages/homepage/homepage.component';
-import { SignupComponent } from './pages/signup/signup.component';
-import { LoginComponent } from './pages/login/login.component';
+import { HomepageComponent } from './pages/home-page/homepage.component';
+import { SignupComponent } from './pages/signup-page/signup.component';
+import { LoginComponent } from './pages/login-page/login.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
