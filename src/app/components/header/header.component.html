@@ -11,8 +11,11 @@
     <div>
       <ul class="nav navbar-nav">
         <li routerLinkActive="active">
-          <a routerLink="./concerts">View Concerts</a>
+          <a routerLink="./concerts">View All Concerts</a>
         </li>
+        <li routerLinkActive="active" *ngIf="afAuth.user | async">
+            <a routerLink="./today-concert">Today's Concerts</a>
+          </li>
         <li routerLinkActive="active" *ngIf="afAuth.user | async">
           <a routerLink="./add-concert">Add Concert</a>
         </li>
