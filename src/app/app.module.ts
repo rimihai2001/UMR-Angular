@@ -11,6 +11,8 @@ import { SignupComponent } from './pages/signup-page/signup.component';
 import { LoginComponent } from './pages/login-page/login.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './components/header/header.component';
+import { PromoBannerComponent } from './components/promo-banner/promo-banner.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomepageComponent,
     SignupComponent,
     LoginComponent,
-    MainPageComponent
+    MainPageComponent,
+    HeaderComponent,
+    PromoBannerComponent
   ],
   imports: [
     BrowserModule,
