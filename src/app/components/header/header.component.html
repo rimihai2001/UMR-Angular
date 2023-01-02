@@ -1,0 +1,25 @@
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+/>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a routerLink="/" class="navbar-brand">Underground Monsters Romania</a>
+    </div>
+
+    <div>
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+          <a routerLink="./concerts">View Concerts</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="afAuth.user | async">
+          <a routerLink="./add-concert">Add Concert</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="afAuth.user | async">
+          <a (click)="logout()" routerLink="./home">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
