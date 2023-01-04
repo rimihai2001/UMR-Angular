@@ -37,12 +37,12 @@
           <div class="c-links">
             <div *ngIf="concert.concertEvent.length > 0">
               <a href="{{ concert.concertEvent }}" class="card-link"
-                >Facebook Event</a
+                ><button class="btn btn-primary">Facebook Event</button></a
               >
             </div>
             <div *ngIf="concert.concertEvent.length > 0">
               <a href="{{ concert.concertTickets }}" class="card-link"
-                >Buy Tickets</a
+                ><button class="btn btn-success">Buy Tickets</button></a
               >
             </div>
           </div>
