@@ -9,6 +9,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class AllConcertsPageComponent implements OnInit {
   allConcerts: Concert[];
+  todayDate: string;
   constructor(
     public afAuth: AngularFireAuth,
     private db: AngularFireDatabase,
@@ -16,6 +17,8 @@ export class AllConcertsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getStarted();
+    var today = new Date();
+    this.todayDate = today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();
   }
 
   async getStarted() {
@@ -24,6 +27,7 @@ export class AllConcertsPageComponent implements OnInit {
     await this.getConcerts().then((value) => {
       conc = value as Concert[];
     });
+    conc.sort(compareDate);
     this.allConcerts = [...conc];
   }
 
@@ -38,6 +42,13 @@ export class AllConcertsPageComponent implements OnInit {
     });
   }
 
+  notExpired(date) {
+    return (
+      date.split('/').reverse().join('') >=
+      this.todayDate.split('/').reverse().join('')
+    );
+  }
+
 }
 
 class Concert {
@@ -50,4 +61,10 @@ class Concert {
   concertDate: string | undefined;
   concertEvent: string | undefined;
   concertTickets: string | undefined;
+}
+
+function compareDate(a: Concert, b: Concert) {
+  let task1 = a.concertDate.split('/').reverse().join('');
+  let task2 = b.concertDate.split('/').reverse().join('');
+  return task1 > task2 ? 1 : task1 < task2 ? -1 : 0;
 }
