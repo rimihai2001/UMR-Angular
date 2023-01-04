@@ -1,8 +1,50 @@
-<div *ngFor="let concert of allConcerts">
-  <div *ngIf="concert.concertDate == todayDate">
-    <p>{{ concert.name }}</p>
-    <p>{{ concToday() }}</p>
+<div class="container">
+  <h1>There are {{ concertsToday }} concerts today!</h1>
+  <div class="all-concerts-div" *ngFor="let concert of allConcerts">
+    <div class="card-div" *ngIf="concert.concertDate == todayDate">
+      <p>{{ concToday() }}</p>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title" style="font-weight: bold">
+            {{ concert.name }}
+          </h4>
+          <h5 class="card-subtitle mb-2 text-muted">
+            {{ concert.concertDate }}
+          </h5>
+          <h5 class="card-subtitle mb-2">
+            {{ concert.locationName }}: {{ concert.locationAddress }}
+          </h5>
+          <p class="card-text">{{ concert.description }}</p>
+          <div class="lists-elem">
+            <h5 style="font-weight: bold">Bands:</h5>
+            <ul
+              class="list-group list-group-flush"
+              *ngFor="let band of concert.band_names"
+            >
+              <li class="list-group-item">{{ band }}</li>
+            </ul>
+            <h5 style="font-weight: bold">Music genres:</h5>
+            <ul
+              class="list-group list-group-flush"
+              *ngFor="let genre of concert.music_genres"
+            >
+              <li class="list-group-item">{{ genre }}</li>
+            </ul>
+          </div>
+          <div class="c-links">
+            <div *ngIf="concert.concertEvent.length > 0">
+              <a href="{{ concert.concertEvent }}" class="card-link"
+                >Facebook Event</a
+              >
+            </div>
+            <div *ngIf="concert.concertEvent.length > 0">
+              <a href="{{ concert.concertTickets }}" class="card-link"
+                >Buy Tickets</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<p>There are {{concertsToday}} concerts today!</p>
