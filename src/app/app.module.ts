@@ -21,6 +21,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { MatInputModule } from '@angular/material/input';
     PromoBannerComponent,
     AddConcertPageComponent,
     AllConcertsPageComponent,
-    TodayConcertsPageComponent
+    TodayConcertsPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +47,9 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatCardModule,
     MatInputModule,
+    MatSelectModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
