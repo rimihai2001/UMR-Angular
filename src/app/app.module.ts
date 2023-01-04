@@ -16,6 +16,8 @@ import { PromoBannerComponent } from './components/promo-banner/promo-banner.com
 import { AddConcertPageComponent } from './pages/add-concert-page/add-concert-page.component';
 import { AllConcertsPageComponent } from './pages/all-concerts-page/all-concerts-page.component';
 import { TodayConcertsPageComponent } from './pages/today-concerts-page/today-concerts-page.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { TodayConcertsPageComponent } from './pages/today-concerts-page/today-co
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
