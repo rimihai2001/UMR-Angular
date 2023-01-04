@@ -1,17 +1,51 @@
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+/>
+
 <div class="container">
   <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <input placeholder="Email" type="email" formControlName="email" />
-    <input
-      placeholder="Password"
-      type="password"
-      formControlName="password"
-      minlength="6"
-    />
-    <button type="submit" (click)="onSubmit()">Log me in</button>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          autocomplete="off"
+          formControlName="email"
+          type="email"
+          matInput
+          placeholder="Email"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          placeholder="Password"
+          type="password"
+          formControlName="password"
+          matInput
+          minlength="6"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        (click)="onSubmit()"
+      >
+        Log me in
+      </button>
+    </div>
   </form>
-
+  <br><br>
+  <p>Do you need to create an account?</p>
   <p>
-    Go back to
-    <span routerLink="../signup">Sign up</span>
+    Go to
+    <button mat-raised-button color="primary" routerLink="../signup">
+      Sign up
+    </button>
   </p>
 </div>

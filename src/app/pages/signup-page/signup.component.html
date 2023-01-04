@@ -1,25 +1,60 @@
 <div class="container">
   <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <input placeholder="First Name" formControlName="fname" />
-    <input placeholder="Last Name" formControlName="lname" />
-    <input placeholder="Email" type="email" formControlName="email" />
-    <input
-      placeholder="Password"
-      type="password"
-      formControlName="password"
-      minlength="6"
-    />
-    <select formControlName="role">
-      <option value="" disabled selected hidden>User Type</option>
-      <option value="student">Band</option>
-      <option value="profesor">Location</option>
-    </select>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label> First Name </mat-label>
+        <input placeholder="First Name" formControlName="fname" matInput />
+      </mat-form-field>
 
-    <button type="submit">Sign me up</button>
+      <mat-form-field appearance="outline">
+        <mat-label> Last Name </mat-label>
+        <input placeholder="Last Name" formControlName="lname" matInput />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label> Email </mat-label>
+        <input
+          placeholder="Email"
+          type="email"
+          formControlName="email"
+          matInput
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label> Password </mat-label>
+        <input
+          placeholder="Password"
+          type="password"
+          formControlName="password"
+          matInput
+          minlength="6"
+        />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role">
+          <mat-option value="" disabled selected hidden>User Type</mat-option>
+          <mat-option value="band">Band</mat-option>
+          <mat-option value="location">Location</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit">Sign me up</button>
   </form>
 
-  <p>
-    Already a member?
-    <button routerLink="../login">Log in</button>
-  </p>
+  <div class="go-sign-in">
+    <p>
+      Already have an account?
+      <button mat-raised-button color="primary" routerLink="../login">
+        Log in
+      </button>
+    </p>
+  </div>
 </div>
