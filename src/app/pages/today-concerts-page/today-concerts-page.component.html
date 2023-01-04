@@ -1,1 +1,8 @@
-<p>today-concerts-page works!</p>
+<div *ngFor="let concert of allConcerts">
+  <div *ngIf="concert.concertDate == todayDate">
+    <p>{{ concert.name }}</p>
+    <p>{{ concToday() }}</p>
+  </div>
+</div>
+
+<p>There are {{concertsToday}} concerts today!</p>
