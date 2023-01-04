@@ -41,13 +41,13 @@ export class AddConcertPageComponent implements OnInit {
   async getStarted() {
     var conc: Concert[];
     conc = [];
-    await this.getTasks().then((value) => {
+    await this.getConcerts().then((value) => {
       conc = value as Concert[];
     });
     this.allConcerts = [...conc];
   }
 
-  getTasks() {
+  getConcerts() {
     return new Promise((resolve, reject) => {
       this.db
         .list('concerts/concerts')
