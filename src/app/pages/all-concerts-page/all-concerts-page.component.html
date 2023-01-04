@@ -1,0 +1,5 @@
+<div *ngFor="let concert of allConcerts">
+    <div *ngIf = "notExpired(concert.concertDate)">
+        <p>{{concert.name}}</p>
+    </div>
+</div>
