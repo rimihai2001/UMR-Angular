@@ -4,28 +4,28 @@
   [formGroup]="addConcertForm"
   (ngSubmit)="addConcert()"
 >
-  <input formControlName="concertName" placeholder="Concert Name" />
+  <input formControlName="concertName" placeholder="Concert Name*" />
   <textarea
     formControlName="concertDescription"
-    placeholder="Concert Description"
+    placeholder="Concert Description*"
   >
   </textarea>
   <input
     formControlName="bandsNames"
-    placeholder="Bands Names (separated by semicolon)"
+    placeholder="Bands Names * (separated by semicolon)"
   />
   <input
     formControlName="musicGenres"
-    placeholder="Music Genres (separated by semicolon)"
+    placeholder="Music Genres * (separated by semicolon)"
   />
-  <input formControlName="locationName" placeholder="Location Name" />
-  <input formControlName="locationAddress" placeholder="Location Address" />
+  <input formControlName="locationName" placeholder="Location Name *" />
+  <input formControlName="locationAddress" placeholder="Location Address *" />
   <div class="date-pick">
     <input
       formControlName="concertDate"
       matInput
       [matDatepicker]="picker"
-      placeholder="Date"
+      placeholder="Date *"
     />
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
@@ -34,6 +34,8 @@
   <input formControlName="concertEvent" placeholder="Facebook Event" />
   <input formControlName="concertTickets" placeholder="Tickets Link" />
 
+
+  <p style="color:red; text-align: center"> NOTE: All fields with * must be completed!</p>
   <button mat-raised-button color="primary" type="submit">Add Concert</button>
 </form>
 

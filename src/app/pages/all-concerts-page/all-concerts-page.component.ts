@@ -43,10 +43,14 @@ export class AllConcertsPageComponent implements OnInit {
   }
 
   notExpired(date) {
-    return (
-      date.split('/').reverse().join('') >=
-      this.todayDate.split('/').reverse().join('')
-    );
+    let dtask = date.split('/').reverse();
+    let dtoday = this.todayDate.split('/').reverse();
+    for (let i = 0; i < 3; i++) {
+      if (parseInt(dtask[i]) > parseInt(dtoday[i])) return true;
+      else if (parseInt(dtask[i]) < parseInt(dtoday[i])) return false;
+    }
+
+    return true;
   }
 
 }
@@ -63,8 +67,16 @@ class Concert {
   concertTickets: string | undefined;
 }
 
+
+
 function compareDate(a: Concert, b: Concert) {
-  let task1 = a.concertDate.split('/').reverse().join('');
-  let task2 = b.concertDate.split('/').reverse().join('');
-  return task1 > task2 ? 1 : task1 < task2 ? -1 : 0;
+  let concert1 = a.concertDate.split('/').reverse();
+  let concert2 = b.concertDate.split('/').reverse();
+
+  for (let i = 0; i < 3; i++) {
+    if (parseInt(concert1[i]) > parseInt(concert2[i])) return 1;
+    else if (parseInt(concert1[i]) < parseInt(concert2[i])) return -1;
+  }
+
+  return 0;
 }
