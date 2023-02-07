@@ -1,10 +1,10 @@
 # Underground Monsters Romania
 
-##Descriere
+## Descriere
 
 O aplicatie ce permite vizualizarea concertelor viitoare si permite adaugarea altor concerte de catre un utilizator cu cont.
 
-##Demo
+## Demo
 [Demo](https://drive.google.com/file/d/152ImDXIeeKm4ghClnezWFkmac8utv9a4/view?usp=share_link)
 
 ## Cerinte
