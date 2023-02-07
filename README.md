@@ -1,27 +1,34 @@
-# UndergroundMonstersRomania
+# Underground Monsters Romania
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.19.
+##Descriere
 
-## Development server
+O aplicatie ce permite vizualizarea concertelor viitoare si permite adaugarea altor concerte de catre un utilizator cu cont.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Demo
+[Demo](https://drive.google.com/file/d/152ImDXIeeKm4ghClnezWFkmac8utv9a4/view?usp=share_link)
 
-## Code scaffolding
+## Cerinte
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Sa aiba mai multe rute  (2p)
 
-## Build
+Se pot observa in [App Routing](https://github.com/rimihai2001/Angular-Project/blob/main/src/app/app-routing.module.ts).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Sa se foloseasca componente reutilizabile (2p)
 
-## Running unit tests
+[Promo banner-ul](https://github.com/rimihai2001/Angular-Project/tree/main/src/app/components/promo-banner) pentru promovarea paginii Rock Monsters Romania si [NavBar-ul](https://github.com/rimihai2001/Angular-Project/tree/main/src/app/components/header) au fost create pentru a fi componente reutilizabile in cadrul paginii.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Sa se comunice intre componente (2p)
 
-## Running end-to-end tests
+Avem componenta [Greeting Message](https://github.com/rimihai2001/Angular-Project/tree/main/src/app/components/greeting-message) care este copil al componentei [Main Page](https://github.com/rimihai2001/Angular-Project/tree/main/src/app/pages/main-page).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Rute publice si private (1p)
 
-## Further help
+Main Page si Add Concert Page pot fi accesate doar in cazul in care utilizatorul este autentificat dupa cum se poate observa in [App Routing](https://github.com/rimihai2001/Angular-Project/blob/main/src/app/app-routing.module.ts), accesul lor fiind securizat cu [Auth Guard](https://github.com/rimihai2001/Angular-Project/blob/main/src/app/services/auth.guard.ts).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Sa fie cel putin o pagina cu un form ( login/register) (2p)
+
+Paginile ce contin forms sunt paginile de [Login](https://github.com/rimihai2001/Angular-Project/tree/main/src/app/pages/login-page), [Sign Up](https://github.com/rimihai2001/Angular-Project/tree/main/src/app/pages/signup-page) si [Add Concert](https://github.com/rimihai2001/Angular-Project/tree/main/src/app/pages/add-concert-page).
+
+- Firebase sau orice alt mediu de backend (1p) 
+
+In proiect este folosit Firebase pentru autentificare si baza de date.
